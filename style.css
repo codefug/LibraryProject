@@ -45,7 +45,7 @@ form{
     gap:1rem;
 }
 select option:checked{
-    color:rgb(185, 185, 185);
+    color:rgb(185, 185, 185) !important;
 }
 select{
     appearance: none;
@@ -95,6 +95,9 @@ main{
     width:250px;
     border:1px solid black;
     border-radius:1rem;
+    border-bottom-right-radius: 0px;
+    border-right:0.2rem solid white;
+    border-bottom:1rem solid white;
 }
 .newcard{
     display:flex;
@@ -103,7 +106,6 @@ main{
     align-items: stretch;
 }
 .newcard>*:not(button){
-    border-bottom: 1px solid black;
     border-radius: 10px;
     display:flex;
     justify-content: center;

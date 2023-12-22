@@ -1,4 +1,5 @@
 const myLibrary = [];
+// Library의 prototype은 Array.prototype이다.
 const main = document.querySelector('main');
 const card = document.querySelector('.card');
 const dialog = document.querySelector('#Dialog');
@@ -34,6 +35,11 @@ card.addEventListener("click", () => {
     }
 })
 
+for (opt of optionlist){
+    if (opt.value!="default"){
+    opt.style.color="black";}
+}
+
 select.addEventListener("change", (event) => {
     if (event.target.value != "default") {
         select.style.color = "black";
@@ -47,10 +53,10 @@ confirm.addEventListener("click", (event) => {
     let newBook;
     const formdata = confirm.parentElement.parentElement;
     if (formdata.type.value != "default") {
-        newBook = new typeBook(formdata.title.value, formdata.page.value, formdata.author.value, false, formdata.type.value)
+        newBook = new typeBook(formdata.title.value, formdata.page.value,false,formdata.author.value, formdata.type.value)
         addBookToLibrary(newBook);
     } else {
-        newBook = new Book(formdata.title.value, formdata.page.value, formdata.author.value, false);
+        newBook = new Book(formdata.title.value, formdata.page.value, false, formdata.author.value);
         addBookToLibrary(newBook);
     }
     const newCard = document.createElement("div");
@@ -62,7 +68,8 @@ confirm.addEventListener("click", (event) => {
     newCard.appendChild(newTitle);
     let newType;
 
-    if (Object.getPrototypeOf(newBook) == typeBook.prototype) {
+    // if (Object.getPrototypeOf(newBook) == typeBook.prototype) {
+    if (newBook instanceof typeBook) {
         newType = document.createElement("div");
         newType.textContent = newBook.type;
         newCard.appendChild(newType);
