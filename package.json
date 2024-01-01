@@ -1,0 +1,36 @@
+{
+  "name": "cutomlibraryproject",
+  "version": "1.0.0",
+  "description": "library project renewal from my old project",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codefug/LibraryProject.git"
+  },
+  "author": "codefug robot9917@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codefug/LibraryProject/issues"
+  },
+  "homepage": "https://github.com/codefug/LibraryProject#readme",
+  "dependencies": {
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.6.0",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.89.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "prettier": "3.1.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
